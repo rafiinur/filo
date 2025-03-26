@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar - FILO</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body style="background-image: url('background.jpg'); background-size: cover;">
+    <div class="container">
+        <div class="register-box">
+            <img src="https://sigmawire.net/i/03/8PFyjd.png" alt="Logo FILO" class="logo">
+            <h2 class="register-heading">Buat Akun</h2>
+            <form id="registerForm">
+                <label for="registerName">Nama Lengkap</label>
+                <input type="text" id="registerName" placeholder="Nama Depan dan Belakang" required>
+                
+                <label for="registerEmail">Email</label>
+                <input type="email" id="registerEmail" placeholder="Email" required>
+                
+                <label for="registerPassword">Kata Sandi</label>
+                <input type="password" id="registerPassword" placeholder="Minimal 8 karakter" required>
+                <small class="info-text">Kata sandi harus minimal 8 karakter.</small>
+                
+                <label for="registerConfirmPassword">Konfirmasi Kata Sandi</label>
+                <input type="password" id="registerConfirmPassword" placeholder="Ulangi kata sandi" required>
+                
+                <button type="submit" class="create-account-btn">Buat Akun FILO</button>
+            </form>
+            <p class="already-account">Sudah punya akun? <a href="login.html">Masuk</a></p>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>© 2025 FILO. Hak cipta dilindungi. | <a href="#">Kebijakan Privasi</a> | <a href="#">Ketentuan Layanan</a></p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
