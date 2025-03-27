@@ -1,410 +1,616 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Attack on Titan - IMDb</title>
-    <link rel="stylesheet" href="src/style/detail.css">
-</head>
-<body>
-    <!-- Header Navigation -->
-    <header>
-        <div class="header-left">
-            <div class="episode-guide">
-                <span class="header-link">Episode guide</span>
-                <span class="episode-number">98</span>
-                <span class="nav-arrow">›</span>
+    <link rel="stylesheet" href="src/style/detail.css" />
+    <link rel="stylesheet" href="src/style/shared.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <div class="nav-left">
+            <a href="/">
+              <img
+                src="https://sigmawire.net/i/03/8PFyjd.png"
+                alt="logo"
+                class="logo"
+              />
+            </a>
+            <div class="menu-container">
+              <button class="button button--ghost button--icon" id="menu-btn">
+                <svg
+                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M18 6H6m12 4H6m12 4H6m12 4H6"
+                  />
+                </svg>
+                Menu
+              </button>
+              <div class="nav-menu" id="menu">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Movies</a>
+                <a href="#" class="nav-link">TV Shows</a>
+                <a href="#" class="nav-link">New & Popular</a>
+                <a href="#" class="nav-link">My List</a>
+              </div>
             </div>
-        </div>
-        <div class="header-right">
-            <nav>
-                <a href="#" class="header-link">Cast & crew</a>
-                <a href="#" class="header-link">User reviews</a>
-                <a href="#" class="header-link">Trivia</a>
-                <a href="#" class="header-link">FAQ</a>
-                <a href="#" class="header-link">IMDbPro</a>
-            </nav>
-            <button class="all-topics-button">
-                <span class="menu-icon">☰</span>
-                All topics
-            </button>
-            <button class="share-button">↗</button>
-        </div>
+
+            <div class="search-bar">
+              <button class="search-filter">
+                All<svg
+                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <input
+                class="search-input"
+                type="text"
+                placeholder="Search"
+                id="search-input"
+                onkeydown="if(event.key === 'Enter') handleSearch()"
+              />
+              <button class="search-icon" onclick="handleSearch()">
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="gray"
+                    stroke-linecap="round"
+                    stroke-width="2"
+                    d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="auth-actions">
+            <a href="/login.html" class="auth-link">Sign In</a>
+            <a href="/register.html" class="auth-link">Sign Up</a>
+          </div>
+        </nav>
+      </div>
     </header>
-    
+
+    <!-- Header Navigation -->
+    <header class="header-detail">
+      <div class="header-left">
+        <div class="episode-guide">
+          <span class="header-link">Episode guide</span>
+          <span class="episode-number">98</span>
+          <span class="nav-arrow">›</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <nav>
+          <a href="#" class="header-link">Cast & crew</a>
+          <a href="#" class="header-link">User reviews</a>
+          <a href="#" class="header-link">Trivia</a>
+          <a href="#" class="header-link">FAQ</a>
+          <a href="#" class="header-link">IMDbPro</a>
+        </nav>
+        <button class="all-topics-button">
+          <span class="menu-icon">☰</span>
+          All topics
+        </button>
+        <button class="share-button">↗</button>
+      </div>
+    </header>
+
     <main class="container">
-        <!-- Title Section -->
-        <section class="title-section">
-            <h1 class="title">Attack on Titan</h1>
-            <div class="subtitle">
-                <span>Original title: Shingeki no Kyojin</span>
-                <span class="dot-separator">•</span>
-                <span>TV Series</span>
-                <span class="dot-separator">•</span>
-                <span>2013–2023</span>
-                <span class="dot-separator">•</span>
-                <span>TV-MA</span>
-                <span class="dot-separator">•</span>
-                <span>24m</span>
-            </div>
-            
-            <!-- Ratings Bar -->
-            <div class="rating-section">
-                <!-- IMDb Rating -->
-                <div class="rating-column">
-                    <span class="rating-header">IMDB RATING</span>
-                    <div class="imdb-rating">
-                        <span class="star-icon gold">★</span>
-                        <span class="rating-value">9.1</span>
-                        <span class="rating-max">/10</span>
-                    </div>
-                    <span class="rating-count">594K</span>
-                </div>
-                
-                <!-- User Rating -->
-                <div class="rating-column">
-                    <span class="rating-header">YOUR RATING</span>
-                    <div class="your-rating">
-                        <span class="star-icon blue">☆</span>
-                        <button class="rate-button">Rate</button>
-                    </div>
-                </div>
-                
-                <!-- Popularity -->
-                <div class="rating-column">
-                    <span class="rating-header">POPULARITY</span>
-                    <div class="popularity">
-                        <span class="popularity-icon">⬤</span>
-                        <span class="popularity-value">36</span>
-                        <span class="popularity-trend">▲ 5</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Media Section (Revised Layout) -->
-        <section class="media-gallery">
-            <!-- Media grid container -->
-            <div class="media-grid">
-                <!-- Poster -->
-                <div class="poster-container">
-                    <img src="https://m.media-amazon.com/images/I/81wB0fBu6LL.jpg" alt="Attack on Titan Poster" class="poster-image">
-                </div>
-                
-                <!-- Trailer -->
-                <div class="trailer-container">
-                    <img src="https://asset.kompas.com/crops/wWtFlnsnwMcADuBdP7fZ6WQOamM=/0x0:0x0/750x500/data/photo/2021/01/26/600fb126e1a6e.jpg" alt="Attack on Titan Trailer" class="trailer-image">
-                    <div class="play-overlay">
-                        <div class="play-button">
-                            <span class="play-icon">▶</span>
-                        </div>
-                        <span class="play-text">Play trailer</span>
-                        <span class="trailer-duration">1:31</span>
-                    </div>
-                    
-                    <!-- Trailer Actions -->
-                    <div class="trailer-actions">
-                        <div class="trailer-like">
-                            <span class="like-icon">👍</span>
-                            <span>879</span>
-                        </div>
-                        <div class="trailer-dislike">
-                            <span class="heart-icon">🧡</span>
-                            <span>897</span>
-                        </div>
-                    </div>
-                </div>
+      <!-- Title Section -->
+      <section class="title-section">
+        <h1 class="title">Attack on Titan</h1>
+        <div class="subtitle">
+          <span>Original title: Shingeki no Kyojin</span>
+          <span class="dot-separator">•</span>
+          <span>TV Series</span>
+          <span class="dot-separator">•</span>
+          <span>2013–2023</span>
+          <span class="dot-separator">•</span>
+          <span>TV-MA</span>
+          <span class="dot-separator">•</span>
+          <span>24m</span>
+        </div>
 
-                <!-- Media Buttons -->
-                <div class="media-buttons">
-                    <a href="#" class="media-button">
-                        <span class="media-icon">📺</span>
-                        <span>17 VIDEOS</span>
-                    </a>
-                    <a href="#" class="media-button">
-                        <span class="media-icon">📷</span>
-                        <span>99+ PHOTOS</span>
-                    </a>
-                </div>
+        <!-- Ratings Bar -->
+        <div class="rating-section">
+          <!-- IMDb Rating -->
+          <div class="rating-column">
+            <span class="rating-header">IMDB RATING</span>
+            <div class="imdb-rating">
+              <span class="star-icon gold">★</span>
+              <span class="rating-value">9.1</span>
+              <span class="rating-max">/10</span>
             </div>
-        </section>
-        
-        <!-- Genre Tags -->
-        <section class="genre-section">
-            <div class="genre-tag">Action Epic</div>
-            <div class="genre-tag">Adult Animation</div>
-            <div class="genre-tag">Anime</div>
-            <div class="genre-tag">Monster Horror</div>
-            <div class="genre-tag">Shōnen</div>
-            <div class="genre-tag">Survival</div>
-            <div class="genre-tag">Tragedy</div>
-            <div class="genre-tag">Action</div>
-            <div class="genre-tag nav-more">❯</div>
-        </section>
-        
-        <!-- Synopsis Section -->
-        <section class="synopsis-section">
-            <p class="synopsis">
-                After his hometown is destroyed, young Eren Jaeger vows to cleanse the earth of the giant humanoid
-                Titans that have brought humanity to the brink of extinction.
-            </p>
-            
-            <!-- Watchlist Button (Revised) -->
-            <div class="watchlist-wrapper">
-                <button class="watchlist-button">
-                    <span class="watchlist-icon">+</span>
-                    Add to Watchlist
-                </button>
-                <div class="watchlist-count">
-                    Added by 364K users
-                </div>
-            </div>
-        </section>
-        
-        <!-- Stars Section -->
-        <section class="stars-section">
-            <span class="stars-header">Stars</span>
-            <div class="stars-list">
-                <span class="star-name">Jessie James Grelle</span>
-                <span class="dot-separator">•</span>
-                <span class="star-name">Bryce Papenbrook</span>
-                <span class="dot-separator">•</span>
-                <span class="star-name">Trina Nishimura</span>
-                <span class="nav-more">❯</span>
-            </div>
-        </section>
-        
-        <!-- Reviews Section -->
-        <section class="reviews-section">
-            <div class="user-reviews">2.4K User reviews</div>
-            <div class="critic-reviews">65 Critic reviews</div>
-        </section>
-        
-        <!-- IMDbPro Section -->
-        <section class="imdbpro-section">
-            <span class="imdbpro-logo">IMDbPro</span>
-            <span class="imdbpro-link">See production info at IMDbPro ↗</span>
-        </section>
+            <span class="rating-count">594K</span>
+          </div>
 
-        <!-- Storyline Section -->
-        <section class="imdb-section storyline-section">
-            <div class="section-header">
-                <div class="section-title">
-                    <div class="yellow-bar"></div>
-                    <h2>Storyline</h2>
-                </div>
-                <button class="edit-button">
-                    <span class="edit-icon">✏️</span>
-                    Edit
-                </button>
+          <!-- User Rating -->
+          <div class="rating-column">
+            <span class="rating-header">YOUR RATING</span>
+            <div class="your-rating">
+              <span class="star-icon blue">☆</span>
+              <button class="rate-button">Rate</button>
             </div>
-            
-            <p class="storyline-text">
-                Humans are nearly exterminated by giant creatures called Titans. Titans are typically several stories tall,
-                seem to have no intelligence, devour human beings and, worst of all, seem to do it for the pleasure rather
-                than as a food source. A small percentage of humanity survived by walling themselves in a land protected
-                by extremely high walls, even taller than the biggest of titans. Flash forward to the present, and mankind
-                has not seen a titan in over 100 years. One day, 10 year old Eren and his childhood friend Mikasa witness
-                something horrific as the city walls are destroyed by a colossal titan that appears out of thin air. As the
-                smaller titans flood the city, the two kids watch in horror as Eren's mother is eaten alive. Eren vows that he
-                will murder every single titan and take revenge for all of mankind.
-            </p>
-            
-            <div class="storyline-tags">
-                <div class="tag">anime</div>
-                <div class="tag">giant</div>
-                <div class="tag">man eating monster</div>
-                <div class="tag">based on manga</div>
-                <div class="tag">titan</div>
-                <div class="tag">98 more</div>
+          </div>
+
+          <!-- Popularity -->
+          <div class="rating-column">
+            <span class="rating-header">POPULARITY</span>
+            <div class="popularity">
+              <span class="popularity-icon">⬤</span>
+              <span class="popularity-value">36</span>
+              <span class="popularity-trend">▲ 5</span>
             </div>
-            
-            <div class="storyline-links">
-                <a href="#" class="link">Plot summary</a>
-                <span class="dot-separator">•</span>
-                <a href="#" class="link">Add synopsis</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Media Section (Revised Layout) -->
+      <section class="media-gallery">
+        <!-- Media grid container -->
+        <div class="media-grid">
+          <!-- Poster -->
+          <div class="poster-container">
+            <img
+              src="https://m.media-amazon.com/images/I/81wB0fBu6LL.jpg"
+              alt="Attack on Titan Poster"
+              class="poster-image"
+            />
+          </div>
+
+          <!-- Trailer -->
+          <div class="trailer-container">
+            <img
+              src="https://asset.kompas.com/crops/wWtFlnsnwMcADuBdP7fZ6WQOamM=/0x0:0x0/750x500/data/photo/2021/01/26/600fb126e1a6e.jpg"
+              alt="Attack on Titan Trailer"
+              class="trailer-image"
+            />
+            <div class="play-overlay">
+              <div class="play-button">
+                <span class="play-icon">▶</span>
+              </div>
+              <span class="play-text">Play trailer</span>
+              <span class="trailer-duration">1:31</span>
             </div>
-            
-            <div class="item-with-chevron">
-                <div class="item-label">Taglines</div>
-                <div class="item-value">The face of humanity's extinction. (season 1)</div>
-                <div class="chevron">›</div>
+
+            <!-- Trailer Actions -->
+            <div class="trailer-actions">
+              <div class="trailer-like">
+                <span class="like-icon">👍</span>
+                <span>879</span>
+              </div>
+              <div class="trailer-dislike">
+                <span class="heart-icon">🧡</span>
+                <span>897</span>
+              </div>
             </div>
-            
-            <div class="item-with-links">
-                <div class="item-label">Genres</div>
-                <div class="item-value">
-                    <a href="#" class="link">Animation</a>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="link">Action</a>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="link">Adventure</a>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="link">Drama</a>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="link">Fantasy</a>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="link">Horror</a>
-                </div>
+          </div>
+
+          <!-- Media Buttons -->
+          <div class="media-buttons">
+            <a href="#" class="media-button">
+              <span class="media-icon">📺</span>
+              <span>17 VIDEOS</span>
+            </a>
+            <a href="#" class="media-button">
+              <span class="media-icon">📷</span>
+              <span>99+ PHOTOS</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Genre Tags -->
+      <section class="genre-section">
+        <div class="genre-tag">Action Epic</div>
+        <div class="genre-tag">Adult Animation</div>
+        <div class="genre-tag">Anime</div>
+        <div class="genre-tag">Monster Horror</div>
+        <div class="genre-tag">Shōnen</div>
+        <div class="genre-tag">Survival</div>
+        <div class="genre-tag">Tragedy</div>
+        <div class="genre-tag">Action</div>
+        <div class="genre-tag nav-more">❯</div>
+      </section>
+
+      <!-- Synopsis Section -->
+      <section class="synopsis-section">
+        <p class="synopsis">
+          After his hometown is destroyed, young Eren Jaeger vows to cleanse the
+          earth of the giant humanoid Titans that have brought humanity to the
+          brink of extinction.
+        </p>
+
+        <!-- Watchlist Button (Revised) -->
+        <div class="watchlist-wrapper">
+          <button class="watchlist-button">
+            <span class="watchlist-icon">+</span>
+            Add to Watchlist
+          </button>
+          <div class="watchlist-count">Added by 364K users</div>
+        </div>
+      </section>
+
+      <!-- Stars Section -->
+      <section class="stars-section">
+        <span class="stars-header">Stars</span>
+        <div class="stars-list">
+          <span class="star-name">Jessie James Grelle</span>
+          <span class="dot-separator">•</span>
+          <span class="star-name">Bryce Papenbrook</span>
+          <span class="dot-separator">•</span>
+          <span class="star-name">Trina Nishimura</span>
+          <span class="nav-more">❯</span>
+        </div>
+      </section>
+
+      <!-- Reviews Section -->
+      <section class="reviews-section">
+        <div class="user-reviews">2.4K User reviews</div>
+        <div class="critic-reviews">65 Critic reviews</div>
+      </section>
+
+      <!-- IMDbPro Section -->
+      <section class="imdbpro-section">
+        <span class="imdbpro-logo">IMDbPro</span>
+        <span class="imdbpro-link">See production info at IMDbPro ↗</span>
+      </section>
+
+      <!-- Storyline Section -->
+      <section class="imdb-section storyline-section">
+        <div class="section-header">
+          <div class="section-title">
+            <div class="yellow-bar"></div>
+            <h2>Storyline</h2>
+          </div>
+          <button class="edit-button">
+            <span class="edit-icon">✏️</span>
+            Edit
+          </button>
+        </div>
+
+        <p class="storyline-text">
+          Humans are nearly exterminated by giant creatures called Titans.
+          Titans are typically several stories tall, seem to have no
+          intelligence, devour human beings and, worst of all, seem to do it for
+          the pleasure rather than as a food source. A small percentage of
+          humanity survived by walling themselves in a land protected by
+          extremely high walls, even taller than the biggest of titans. Flash
+          forward to the present, and mankind has not seen a titan in over 100
+          years. One day, 10 year old Eren and his childhood friend Mikasa
+          witness something horrific as the city walls are destroyed by a
+          colossal titan that appears out of thin air. As the smaller titans
+          flood the city, the two kids watch in horror as Eren's mother is eaten
+          alive. Eren vows that he will murder every single titan and take
+          revenge for all of mankind.
+        </p>
+
+        <div class="storyline-tags">
+          <div class="tag">anime</div>
+          <div class="tag">giant</div>
+          <div class="tag">man eating monster</div>
+          <div class="tag">based on manga</div>
+          <div class="tag">titan</div>
+          <div class="tag">98 more</div>
+        </div>
+
+        <div class="storyline-links">
+          <a href="#" class="link">Plot summary</a>
+          <span class="dot-separator">•</span>
+          <a href="#" class="link">Add synopsis</a>
+        </div>
+
+        <div class="item-with-chevron">
+          <div class="item-label">Taglines</div>
+          <div class="item-value">
+            The face of humanity's extinction. (season 1)
+          </div>
+          <div class="chevron">›</div>
+        </div>
+
+        <div class="item-with-links">
+          <div class="item-label">Genres</div>
+          <div class="item-value">
+            <a href="#" class="link">Animation</a>
+            <span class="dot-separator">•</span>
+            <a href="#" class="link">Action</a>
+            <span class="dot-separator">•</span>
+            <a href="#" class="link">Adventure</a>
+            <span class="dot-separator">•</span>
+            <a href="#" class="link">Drama</a>
+            <span class="dot-separator">•</span>
+            <a href="#" class="link">Fantasy</a>
+            <span class="dot-separator">•</span>
+            <a href="#" class="link">Horror</a>
+          </div>
+        </div>
+
+        <div class="item-with-chevron">
+          <div class="item-label">Certificate</div>
+          <div class="item-value">TV-MA</div>
+          <div class="chevron">›</div>
+        </div>
+
+        <div class="item-with-chevron">
+          <div class="item-label">Parents guide</div>
+          <div class="chevron">›</div>
+        </div>
+      </section>
+
+      <!-- User Reviews Section -->
+      <section class="imdb-section user-reviews-section">
+        <div class="section-header">
+          <div class="section-title">
+            <div class="yellow-bar"></div>
+            <h2>User reviews</h2>
+            <span class="count">2.4K</span>
+            <span class="chevron">›</span>
+          </div>
+          <button class="review-button">
+            <span class="plus-icon">+</span>
+            Review
+          </button>
+        </div>
+
+        <div class="review-card">
+          <div class="review-header">
+            <div class="featured-badge">FEATURED REVIEW</div>
+            <div class="review-rating">
+              <span class="star-icon gold">★</span>
+              <span class="rating">10/10</span>
             </div>
-            
-            <div class="item-with-chevron">
-                <div class="item-label">Certificate</div>
-                <div class="item-value">TV-MA</div>
-                <div class="chevron">›</div>
+          </div>
+
+          <div class="review-title">
+            <h3>Nearly perfect</h3>
+            <span class="chevron">›</span>
+          </div>
+
+          <p class="review-text">
+            Before I started watching this show, I couldn't imagine why it is
+            rated so high. After I finished the first season, I understood. And
+            now, having watched the third season I don't understand, why it
+            isn't rated even higher!
+          </p>
+
+          <p class="review-text">
+            Truly a masterpiece, and deserves to be mentioned on the same page
+            as other fantasy war epics like Lord of the Rings and Game of
+            Thrones. (I dare to say this is even better than those two.) There
+            are countless twist and turns, shocking revelations and
+            heartbreaking moments troughout the series, spiced with great voice
+            acting, beautiful visuals and on top of all: a more than perfect,
+            stunning soundtrack, thanks to Hiroyuki Sawano.
+          </p>
+
+          <div class="review-options">
+            <span class="options-icon">•••</span>
+          </div>
+
+          <div class="review-actions">
+            <div class="helpful">
+              <span class="thumbs-up-icon">👍</span>
+              <span>Helpful</span>
+              <span class="count">1.2K</span>
             </div>
-            
-            <div class="item-with-chevron">
-                <div class="item-label">Parents guide</div>
-                <div class="chevron">›</div>
+            <div class="not-helpful">
+              <span class="thumbs-down-icon">👎</span>
+              <span class="count">109</span>
             </div>
-        </section>
-        
-        <!-- User Reviews Section -->
-        <section class="imdb-section user-reviews-section">
-            <div class="section-header">
-                <div class="section-title">
-                    <div class="yellow-bar"></div>
-                    <h2>User reviews</h2>
-                    <span class="count">2.4K</span>
-                    <span class="chevron">›</span>
-                </div>
-                <button class="review-button">
-                    <span class="plus-icon">+</span>
-                    Review
-                </button>
+            <div class="more-actions">
+              <span class="dots-icon">...</span>
             </div>
-            
-            <div class="review-card">
-                <div class="review-header">
-                    <div class="featured-badge">FEATURED REVIEW</div>
-                    <div class="review-rating">
-                        <span class="star-icon gold">★</span>
-                        <span class="rating">10/10</span>
-                    </div>
-                </div>
-                
-                <div class="review-title">
-                    <h3>Nearly perfect</h3>
-                    <span class="chevron">›</span>
-                </div>
-                
-                <p class="review-text">
-                    Before I started watching this show, I couldn't imagine why it is rated so high. After I finished the first
-                    season, I understood. And now, having watched the third season I don't understand, why it isn't rated
-                    even higher!
-                </p>
-                
-                <p class="review-text">
-                    Truly a masterpiece, and deserves to be mentioned on the same page as other fantasy war epics like
-                    Lord of the Rings and Game of Thrones. (I dare to say this is even better than those two.) There are
-                    countless twist and turns, shocking revelations and heartbreaking moments troughout the series,
-                    spiced with great voice acting, beautiful visuals and on top of all: a more than perfect, stunning
-                    soundtrack, thanks to Hiroyuki Sawano.
-                </p>
-                
-                <div class="review-options">
-                    <span class="options-icon">•••</span>
-                </div>
-                
-                <div class="review-actions">
-                    <div class="helpful">
-                        <span class="thumbs-up-icon">👍</span>
-                        <span>Helpful</span>
-                        <span class="count">1.2K</span>
-                    </div>
-                    <div class="not-helpful">
-                        <span class="thumbs-down-icon">👎</span>
-                        <span class="count">109</span>
-                    </div>
-                    <div class="more-actions">
-                        <span class="dots-icon">...</span>
-                    </div>
-                </div>
-                
-                <div class="review-footer">
-                    <a href="#" class="user">henchey</a>
-                    <span class="dot-separator">•</span>
-                    <span class="date">Dec 17, 2019</span>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="permalink">Permalink</a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Details Section -->
-        <section class="imdb-section details-section">
-            <div class="section-header">
-                <div class="section-title">
-                    <div class="yellow-bar"></div>
-                    <h2>Details</h2>
-                </div>
-                <button class="edit-button">
-                    <span class="edit-icon">✏️</span>
-                    Edit
-                </button>
-            </div>
-            
-            <div class="details-item">
-                <div class="item-label">Release date</div>
-                <div class="item-value">
-                    <a href="#" class="link">September 28, 2013</a> (United States)
-                </div>
-                <div class="chevron">›</div>
-            </div>
-            
-            <div class="details-item">
-                <div class="item-label">Country of origin</div>
-                <div class="item-value">
-                    <a href="#" class="link">Japan</a>
-                </div>
-            </div>
-            
-            <div class="details-item">
-                <div class="item-label">Official sites</div>
-                <div class="item-value">
-                    <a href="#" class="link">FUNimation Productions (United States)</a>
-                    <span class="external-link-icon">↗</span>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="link">Official site (Japan)</a>
-                    <span class="external-link-icon">↗</span>
-                </div>
-            </div>
-            
-            <div class="details-item">
-                <div class="item-label">Languages</div>
-                <div class="item-value">
-                    <a href="#" class="link">Japanese</a>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="link">English</a>
-                </div>
-            </div>
-            
-            <div class="details-item">
-                <div class="item-label">Also known as</div>
-                <div class="item-value">AOT</div>
-                <div class="chevron">›</div>
-            </div>
-            
-            <div class="details-item">
-                <div class="item-label">Production companies</div>
-                <div class="item-value">
-                    <a href="#" class="link">Wit Studio</a>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="link">Production I.G.</a>
-                    <span class="dot-separator">•</span>
-                    <a href="#" class="link">Mappa</a>
-                </div>
-                <div class="chevron">›</div>
-            </div>
-            
-            <div class="details-item">
-                <a href="#" class="link">See more company credits at IMDbPro</a>
-                <span class="external-link-icon">↗</span>
-            </div>
-        </section>
+          </div>
+
+          <div class="review-footer">
+            <a href="#" class="user">henchey</a>
+            <span class="dot-separator">•</span>
+            <span class="date">Dec 17, 2019</span>
+            <span class="dot-separator">•</span>
+            <a href="#" class="permalink">Permalink</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Details Section -->
+      <section class="imdb-section details-section">
+        <div class="section-header">
+          <div class="section-title">
+            <div class="yellow-bar"></div>
+            <h2>Details</h2>
+          </div>
+          <button class="edit-button">
+            <span class="edit-icon">✏️</span>
+            Edit
+          </button>
+        </div>
+
+        <div class="details-item">
+          <div class="item-label">Release date</div>
+          <div class="item-value">
+            <a href="#" class="link">September 28, 2013</a> (United States)
+          </div>
+          <div class="chevron">›</div>
+        </div>
+
+        <div class="details-item">
+          <div class="item-label">Country of origin</div>
+          <div class="item-value">
+            <a href="#" class="link">Japan</a>
+          </div>
+        </div>
+
+        <div class="details-item">
+          <div class="item-label">Official sites</div>
+          <div class="item-value">
+            <a href="#" class="link">FUNimation Productions (United States)</a>
+            <span class="external-link-icon">↗</span>
+            <span class="dot-separator">•</span>
+            <a href="#" class="link">Official site (Japan)</a>
+            <span class="external-link-icon">↗</span>
+          </div>
+        </div>
+
+        <div class="details-item">
+          <div class="item-label">Languages</div>
+          <div class="item-value">
+            <a href="#" class="link">Japanese</a>
+            <span class="dot-separator">•</span>
+            <a href="#" class="link">English</a>
+          </div>
+        </div>
+
+        <div class="details-item">
+          <div class="item-label">Also known as</div>
+          <div class="item-value">AOT</div>
+          <div class="chevron">›</div>
+        </div>
+
+        <div class="details-item">
+          <div class="item-label">Production companies</div>
+          <div class="item-value">
+            <a href="#" class="link">Wit Studio</a>
+            <span class="dot-separator">•</span>
+            <a href="#" class="link">Production I.G.</a>
+            <span class="dot-separator">•</span>
+            <a href="#" class="link">Mappa</a>
+          </div>
+          <div class="chevron">›</div>
+        </div>
+
+        <div class="details-item">
+          <a href="#" class="link">See more company credits at IMDbPro</a>
+          <span class="external-link-icon">↗</span>
+        </div>
+      </section>
     </main>
 
+    <footer class="footer">
+      <div class="container">
+        <!-- Footer Links -->
+        <div class="footer-container">
+          <div class="footer-brand">
+            <a href="#">
+              <img
+                src="https://sigmawire.net/i/03/8PFyjd.png"
+                alt="logo"
+                class="logo"
+            /></a>
+            <p>The best place to watch movies and TV shows online.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4 class="footer-column-title">About Us</h4>
+              <a href="#" class="footer-link">Our Story</a>
+              <a href="#" class="footer-link">Careers</a>
+              <a href="#" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-column">
+              <h4 class="footer-column-title">Support</h4>
+              <a href="#" class="footer-link">Help Center</a>
+              <a href="#" class="footer-link">FAQs</a>
+              <a href="#" class="footer-link">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+              <h4 class="footer-column-title">Follow Us</h4>
+              <div class="social-links">
+                <a href="#" class="social-link"
+                  ><svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link"
+                  ><svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M22 5.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.343 8.343 0 0 1-2.605.981A4.13 4.13 0 0 0 15.85 4a4.068 4.068 0 0 0-4.1 4.038c0 .31.035.618.105.919A11.705 11.705 0 0 1 3.4 4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 6.1 13.635a4.192 4.192 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 2 18.184 11.732 11.732 0 0 0 8.291 20 11.502 11.502 0 0 0 19.964 8.5c0-.177 0-.349-.012-.523A8.143 8.143 0 0 0 22 5.892Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link"
+                  ><svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Legal Information -->
+        <div class="footer-legal">
+          <span>© 2021 Filo. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
+
     <script src="src/js/detail.js"></script>
-</body>
+  </body>
 </html>

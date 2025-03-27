@@ -7,13 +7,20 @@
     <title>✨ StarterPack Project ✨</title>
     <!-- 👇 css code file 👇 -->
     <link rel="stylesheet" href="./src/style/global.css" />
+    <link rel="stylesheet" href="./src/style/shared.css" />
   </head>
   <body>
     <header class="header">
       <div class="container">
         <nav class="nav">
           <div class="nav-left">
-            <a href="#" class="logo">Filo</a>
+            <a href="/">
+              <img
+                src="https://sigmawire.net/i/03/8PFyjd.png"
+                alt="logo"
+                class="logo"
+              />
+            </a>
             <div class="menu-container">
               <button class="button button--ghost button--icon" id="menu-btn">
                 <svg
@@ -98,232 +105,252 @@
       </div>
     </header>
 
-    <div class="container main-container">
-      <!-- Start Hero -->
-      <section class="hero">
-        <div class="hero-image">
-          <img
-            src="./src/assets/images/hero-1.jpg"
-            alt="hero"
-            class="hero-img"
-          />
-        </div>
-        <div class="hero-mask"></div>
+    <main>
+      <div class="container main-container">
+        <!-- Start Hero -->
+        <section class="hero">
+          <div class="hero-image">
+            <img
+              src="./src/assets/images/hero-1.jpg"
+              alt="hero"
+              class="hero-img"
+            />
+          </div>
+          <div class="hero-mask"></div>
 
-        <div class="hero-content">
-          <div class="hero-meta">
-            <span>2021</span> |
-            <span>⭐️ 9.5 / 10</span>
+          <div class="hero-content">
+            <div class="hero-meta">
+              <span>2021</span> |
+              <span>⭐️ 9.5 / 10</span>
+            </div>
+            <h1 class="hero-title">Attack On Titan</h1>
+            <div class="hero-categories">
+              <span class="badge">Action</span>
+              <span class="badge">Adventure</span>
+              <span class="badge">Drama</span>
+            </div>
+            <p class="hero-description">
+              In a world where giant humanoid Titans prey on humans, Eren Yeager
+              joins the scout regiment to get revenge on the monsters who killed
+              everyone.
+            </p>
+            <div class="hero-actions">
+              <a href="#" class="button button--primary button--icon"
+                >Watch Trailer
+                <svg
+                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+              </a>
+              <a href="/detail.html" class="button">Learn More</a>
+            </div>
           </div>
-          <h1 class="hero-title">Attack On Titan</h1>
-          <div class="hero-categories">
-            <span class="badge">Action</span>
-            <span class="badge">Adventure</span>
-            <span class="badge">Drama</span>
+        </section>
+        <!-- End Hero -->
+
+        <aside class="sidebar">
+          <!-- Sidebar content goes here -->
+          <div class="sidebar-widget">
+            <h3 class="sidebar-title">Genres</h3>
+            <ul class="sidebar-genres">
+              <li><a class="sidebar-genre" href="#">Action</a></li>
+              <li><a class="sidebar-genre" href="#">Adventure</a></li>
+              <li><a class="sidebar-genre" href="#">Comedy</a></li>
+              <li><a class="sidebar-genre" href="#">Drama</a></li>
+              <li><a class="sidebar-genre" href="#">Fantasy</a></li>
+              <li><a class="sidebar-genre" href="#">Horror</a></li>
+              <li><a class="sidebar-genre" href="#">Mystery</a></li>
+              <li><a class="sidebar-genre" href="#">Romance</a></li>
+              <li><a class="sidebar-genre" href="#">Sci-Fi</a></li>
+              <li><a class="sidebar-genre" href="#">Thriller</a></li>
+              <li><a class="sidebar-genre" href="#">Western</a></li>
+            </ul>
           </div>
-          <p class="hero-description">
-            In a world where giant humanoid Titans prey on humans, Eren Yeager
-            joins the scout regiment to get revenge on the monsters who killed
-            everyone.
-          </p>
-          <div class="hero-actions">
-            <a href="#" class="button button--primary button--icon"
-              >Watch Trailer
-              <svg
-                class="w-6 h-6 text-gray-800 dark:text-white"
-                aria-hidden="true"
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M8.6 5.2A1 1 0 0 0 7 6v12a1 1 0 0 0 1.6.8l8-6a1 1 0 0 0 0-1.6l-8-6Z"
-                  clip-rule="evenodd"
+        </aside>
+      </div>
+
+      <div class="container section-container">
+        <!-- Start Featured -->
+        <section class="featured">
+          <h2 class="section-title">
+            <span class="section-mark"></span>Featured
+          </h2>
+          <div class="featured-content">
+            <div class="featured-card">
+              <img
+                src="/src/assets/images/hero-1.jpg"
+                alt=""
+                class="featured-img"
+              />
+              <span class="featured-type">List</span>
+              <p class="featured-title">Most watched movies this summer</p>
+            </div>
+            <div class="featured-card">
+              <img
+                src="/src/assets/images/hero-1.jpg"
+                alt=""
+                class="featured-img"
+              />
+              <span class="featured-type">Trending</span>
+              <p class="featured-title">Top-rated TV shows of the year</p>
+            </div>
+            <div class="featured-card">
+              <img
+                src="/src/assets/images/hero-1.jpg"
+                alt=""
+                class="featured-img"
+              />
+              <span class="featured-type">New</span>
+              <p class="featured-title">Upcoming releases to watch out for</p>
+            </div>
+            <div class="featured-card">
+              <img
+                src="/src/assets/images/hero-1.jpg"
+                alt=""
+                class="featured-img"
+              />
+              <span class="featured-type">Classic</span>
+              <p class="featured-title">Timeless movies you can't miss</p>
+            </div>
+          </div>
+        </section>
+        <!-- End Featured -->
+
+        <section class="popular">
+          <h2 class="section-title">
+            <span class="section-mark"></span>Popular
+          </h2>
+
+          <!-- <button class="popular-nav-btn popular-nav-btn-prev">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M15 18l-6-6 6-6" />
+            </svg>
+          </button>
+
+          <button class="popular-nav-btn popular-nav-btn-next">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M9 18l6-6-6-6" />
+            </svg>
+          </button> -->
+
+          <div class="popular-content">
+            <div class="popular-carousel">
+              <div class="popular-item">
+                <img
+                  src="/src/assets/images/popular-1.jpg"
+                  alt="Movie Poster"
                 />
-              </svg>
-            </a>
-            <a href="#" class="button">Learn More</a>
-          </div>
-        </div>
-      </section>
-      <!-- End Hero -->
+                <div class="popular-item-overlay">
+                  <div class="popular-item-title">
+                    Orb: On the Movement of Earth
+                  </div>
+                  <div class="popular-item-meta">
+                    <span>2021</span>
+                    <span>⭐️ 9.5 / 10</span>
+                  </div>
+                </div>
+              </div>
+              <div class="popular-item">
+                <img
+                  src="/src/assets/images/popular-1.jpg"
+                  alt="Movie Poster"
+                />
+                <div class="popular-item-overlay">
+                  <div class="popular-item-title">Cosmic Odyssey</div>
+                  <div class="popular-item-meta">
+                    <span>2022</span>
+                    <span>⭐️ 8.7 / 10</span>
+                  </div>
+                </div>
+              </div>
+              <div class="popular-item">
+                <img
+                  src="/src/assets/images/popular-1.jpg"
+                  alt="Movie Poster"
+                />
+                <div class="popular-item-overlay">
+                  <div class="popular-item-title">Stellar Horizons</div>
+                  <div class="popular-item-meta">
+                    <span>2023</span>
+                    <span>⭐️ 9.2 / 10</span>
+                  </div>
+                </div>
+              </div>
 
-      <aside class="sidebar">
-        <!-- Sidebar content goes here -->
-        <div class="sidebar-widget">
-          <h3 class="sidebar-title">Genres</h3>
-          <ul class="sidebar-genres">
-            <li><a class="sidebar-genre" href="#">Action</a></li>
-            <li><a class="sidebar-genre" href="#">Adventure</a></li>
-            <li><a class="sidebar-genre" href="#">Comedy</a></li>
-            <li><a class="sidebar-genre" href="#">Drama</a></li>
-            <li><a class="sidebar-genre" href="#">Fantasy</a></li>
-            <li><a class="sidebar-genre" href="#">Horror</a></li>
-            <li><a class="sidebar-genre" href="#">Mystery</a></li>
-            <li><a class="sidebar-genre" href="#">Romance</a></li>
-            <li><a class="sidebar-genre" href="#">Sci-Fi</a></li>
-            <li><a class="sidebar-genre" href="#">Thriller</a></li>
-            <li><a class="sidebar-genre" href="#">Western</a></li>
-          </ul>
-        </div>
-      </aside>
-    </div>
-
-    <div class="container section-container">
-      <!-- Start Featured -->
-      <section class="featured">
-        <h2 class="section-title">
-          <span class="section-mark"></span>Featured
-        </h2>
-        <div class="featured-content">
-          <div class="featured-card">
-            <img
-              src="/src/assets/images/hero-1.jpg"
-              alt=""
-              class="featured-img"
-            />
-            <span class="featured-type">List</span>
-            <p class="featured-title">Most watched movies this summer</p>
-          </div>
-          <div class="featured-card">
-            <img
-              src="/src/assets/images/hero-1.jpg"
-              alt=""
-              class="featured-img"
-            />
-            <span class="featured-type">Trending</span>
-            <p class="featured-title">Top-rated TV shows of the year</p>
-          </div>
-          <div class="featured-card">
-            <img
-              src="/src/assets/images/hero-1.jpg"
-              alt=""
-              class="featured-img"
-            />
-            <span class="featured-type">New</span>
-            <p class="featured-title">Upcoming releases to watch out for</p>
-          </div>
-          <div class="featured-card">
-            <img
-              src="/src/assets/images/hero-1.jpg"
-              alt=""
-              class="featured-img"
-            />
-            <span class="featured-type">Classic</span>
-            <p class="featured-title">Timeless movies you can't miss</p>
-          </div>
-        </div>
-      </section>
-      <!-- End Featured -->
-
-      <!-- Start Popular -->
-      <section class="popular">
-        <h2 class="section-title"><span class="section-mark"></span>Popular</h2>
-        <div class="popular-content">
-          <div class="card">
-            <img
-              src="/src/assets/images/popular-1.jpg"
-              alt=""
-              class="card-img"
-            />
-            <div class="card-meta">
-              <span>2021</span> | <span>⭐️ 9.5 / 10</span>
-            </div>
-            <h3 class="card-title">Orb: On the movement of earth</h3>
-            <div class="card-actions">
-              <a href="#" class="button button--primary">Watch Trailer</a>
-              <a href="#" class="button button--ghost">Learn More</a>
+              <div class="popular-item">
+                <img
+                  src="/src/assets/images/popular-1.jpg"
+                  alt="Movie Poster"
+                />
+                <div class="popular-item-overlay">
+                  <div class="popular-item-title">Cosmic Odyssey</div>
+                  <div class="popular-item-meta">
+                    <span>2022</span>
+                    <span>⭐️ 8.7 / 10</span>
+                  </div>
+                </div>
+              </div>
+              <div class="popular-item">
+                <img
+                  src="/src/assets/images/popular-1.jpg"
+                  alt="Movie Poster"
+                />
+                <div class="popular-item-overlay">
+                  <div class="popular-item-title">Stellar Horizons</div>
+                  <div class="popular-item-meta">
+                    <span>2023</span>
+                    <span>⭐️ 9.2 / 10</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="card">
-            <img
-              src="/src/assets/images/popular-1.jpg"
-              alt=""
-              class="card-img"
-            />
-            <div class="card-meta">
-              <span>2021</span> | <span>⭐️ 9.5 / 10</span>
-            </div>
-            <h3 class="card-title">Orb: On the movement of earth</h3>
-            <div class="card-actions">
-              <a href="#" class="button button--primary">Watch Trailer</a>
-              <a href="#" class="button button--ghost">Learn More</a>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="/src/assets/images/popular-1.jpg"
-              alt=""
-              class="card-img"
-            />
-            <div class="card-meta">
-              <span>2021</span> | <span>⭐️ 9.5 / 10</span>
-            </div>
-            <h3 class="card-title">Orb: On the movement of earth</h3>
-            <div class="card-actions">
-              <a href="#" class="button button--primary">Watch Trailer</a>
-              <a href="#" class="button button--ghost">Learn More</a>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="/src/assets/images/popular-1.jpg"
-              alt=""
-              class="card-img"
-            />
-            <div class="card-meta">
-              <span>2021</span> | <span>⭐️ 9.5 / 10</span>
-            </div>
-            <h3 class="card-title">Orb: On the movement of earth</h3>
-            <div class="card-actions">
-              <a href="#" class="button button--primary">Watch Trailer</a>
-              <a href="#" class="button button--ghost">Learn More</a>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="/src/assets/images/popular-1.jpg"
-              alt=""
-              class="card-img"
-            />
-            <div class="card-meta">
-              <span>2021</span> | <span>⭐️ 9.5 / 10</span>
-            </div>
-            <h3 class="card-title">Orb: On the movement of earth</h3>
-            <div class="card-actions">
-              <a href="#" class="button button--primary">Watch Trailer</a>
-              <a href="#" class="button button--ghost">Learn More</a>
-            </div>
-          </div>
-          <div class="card">
-            <img
-              src="/src/assets/images/popular-1.jpg"
-              alt=""
-              class="card-img"
-            />
-            <div class="card-meta">
-              <span>2021</span> | <span>⭐️ 9.5 / 10</span>
-            </div>
-            <h3 class="card-title">Orb: On the movement of earth</h3>
-            <div class="card-actions">
-              <a href="#" class="button button--primary">Watch Trailer</a>
-              <a href="#" class="button button--ghost">Learn More</a>
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Popular -->
-    </div>
+        </section>
+      </div>
+    </main>
 
     <footer class="footer">
       <div class="container">
         <!-- Footer Links -->
         <div class="footer-container">
           <div class="footer-brand">
-            <a href="#">Filo</a>
+            <a href="#">
+              <img
+                src="https://sigmawire.net/i/03/8PFyjd.png"
+                alt="logo"
+                class="logo"
+            /></a>
             <p>The best place to watch movies and TV shows online.</p>
           </div>
           <div class="footer-links">

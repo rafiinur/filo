@@ -4,410 +4,105 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FiLo Search</title>
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-      }
-
-      body {
-        background-color: #ffffff;
-        color: #000000;
-        line-height: 1.5;
-      }
-
-      .container {
-        max-width: 1280px;
-        margin: 0 auto;
-        padding: 0 20px;
-      }
-
-      /* Search Results Section */
-      .search-page {
-        margin-top: 20px;
-      }
-
-      .search-title {
-        font-size: 32px;
-        margin-bottom: 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #000000;
-      }
-
-      .search-title .more-results {
-        color: #000000;
-        text-decoration: none;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-        font-size: 16px;
-        font-weight: normal;
-      }
-
-      .more-results-heading {
-        display: flex;
-        align-items: center;
-        margin-bottom: 5px;
-      }
-
-      .more-results-heading::before {
-        content: "";
-        display: inline-block;
-        width: 4px;
-        height: 20px;
-        background-color: #7d0a0a;
-        margin-right: 10px;
-      }
-
-      .more-results-text {
-        color: #555555;
-        font-size: 14px;
-        margin-top: 5px;
-      }
-
-      .section {
-        margin-bottom: 40px;
-      }
-
-      .section-header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 15px;
-        position: relative;
-      }
-
-      .section-title {
-        font-size: 24px;
-        font-weight: bold;
-        color: #000000;
-      }
-
-      .see-all {
-        color: #555555;
-        text-decoration: none;
-        display: flex;
-        align-items: center;
-        transition: color 0.2s;
-      }
-
-      .see-all:hover {
-        color: #000000;
-      }
-
-      .see-all::after {
-        content: ">";
-        margin-left: 5px;
-      }
-
-      .results-box {
-        background-color: #ffffff;
-        border-radius: 6px;
-        overflow: hidden;
-        color: #000;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        border: 1px solid #e0e0e0;
-      }
-
-      .result-item {
-        display: flex;
-        padding: 20px;
-        border-bottom: 1px solid #e0e0e0;
-      }
-
-      .result-item:last-child {
-        border-bottom: none;
-      }
-
-      .result-avatar {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background-color: #f1f1f1;
-        margin-right: 15px;
-        overflow: hidden;
-      }
-
-      .result-avatar img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .result-info {
-        flex: 1;
-      }
-
-      .result-name {
-        font-size: 16px;
-        font-weight: bold;
-        color: #000;
-        margin-bottom: 5px;
-      }
-
-      .result-role {
-        font-size: 14px;
-        color: #555555;
-      }
-
-      .more-matches {
-        display: flex;
-        justify-content: center;
-        padding: 15px;
-        background-color: #f5f5f5;
-        color: #7d0a0a;
-        text-decoration: none;
-        font-weight: bold;
-        transition: background-color 0.2s;
-      }
-
-      .more-matches:hover {
-        background-color: #e9e9e9;
-      }
-
-      .more-matches::after {
-        content: "▼";
-        margin-left: 5px;
-        font-size: 12px;
-      }
-
-      /* Movie Results */
-      .movie-result {
-        display: flex;
-        padding: 20px;
-        border-bottom: 1px solid #e0e0e0;
-        position: relative;
-      }
-
-      .movie-result:last-child {
-        border-bottom: none;
-      }
-
-      .movie-poster {
-        width: 80px;
-        height: 120px;
-        background-color: #f1f1f1;
-        margin-right: 15px;
-        flex-shrink: 0;
-        object-fit: cover;
-      }
-
-      .movie-info {
-        flex: 1;
-      }
-
-      .movie-title {
-        font-size: 16px;
-        font-weight: bold;
-        color: #000;
-        margin-bottom: 5px;
-      }
-
-      .movie-year {
-        color: #555555;
-        font-size: 14px;
-        margin-bottom: 5px;
-      }
-
-      .movie-cast {
-        font-size: 14px;
-        color: #555555;
-      }
-
-      .add-watchlist {
-        position: absolute;
-        right: 20px;
-        top: 20px;
-        background-color: #bf3131;
-        color: #fff;
-        border: none;
-        padding: 5px 10px;
-        border-radius: 4px;
-        font-size: 13px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        transition: background-color 0.2s;
-      }
-
-      .add-watchlist:hover {
-        background-color: #7d0a0a;
-      }
-
-      .add-watchlist .icon {
-        margin-right: 5px;
-      }
-
-      /* Filter Tags */
-      .filter-tags {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin: 15px 0;
-      }
-
-      .filter-tag {
-        background-color: #ead196;
-        border: 1px solid #e8e8d0;
-        border-radius: 20px;
-        padding: 8px 15px;
-        font-size: 14px;
-        color: #000;
-        cursor: pointer;
-        transition: background-color 0.2s;
-      }
-
-      .filter-tag:hover {
-        background-color: #d9c27e;
-      }
-
-      /* Advanced Search / More Results Section */
-      .advanced-search-section {
-        margin-top: 30px;
-      }
-
-      .advanced-search-title {
-        font-size: 24px;
-        margin-bottom: 10px;
-        display: flex;
-        align-items: center;
-        color: #000000;
-      }
-
-      .advanced-search-title::before {
-        content: "";
-        display: inline-block;
-        width: 4px;
-        height: 24px;
-        background-color: #7d0a0a;
-        margin-right: 10px;
-      }
-
-      .advanced-search-description {
-        color: #555555;
-        font-size: 14px;
-        margin-bottom: 20px;
-      }
-
-      .advanced-search-buttons {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 20px;
-      }
-
-      .advanced-search-button {
-        background-color: #ead196;
-        border: 1px solid #e8e8d0;
-        border-radius: 20px;
-        padding: 8px 15px;
-        font-size: 14px;
-        color: #000;
-        cursor: pointer;
-        transition: background-color 0.2s;
-      }
-
-      .advanced-search-button:hover {
-        background-color: #d9c27e;
-      }
-
-      .browse-section {
-        margin-top: 20px;
-      }
-
-      .browse-text {
-        color: #555555;
-        margin-right: 10px;
-      }
-
-      .browse-link {
-        color: #7d0a0a;
-        text-decoration: none;
-        margin-right: 10px;
-        transition: color 0.2s;
-      }
-
-      .browse-link:hover {
-        color: #5a0707;
-        text-decoration: underline;
-      }
-
-      .browse-dot {
-        color: #555555;
-        margin-right: 10px;
-      }
-
-      /* Two Column Layout */
-      .two-column {
-        display: flex;
-        gap: 30px;
-      }
-
-      .main-column {
-        flex: 2;
-      }
-
-      .side-column {
-        flex: 1;
-      }
-
-      /* More Results Styling */
-      .side-header {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-      }
-
-      .side-header::before {
-        content: "";
-        display: inline-block;
-        width: 4px;
-        height: 24px;
-        background-color: #ead196;
-        margin-right: 10px;
-      }
-
-      .side-title {
-        font-size: 22px;
-        font-weight: bold;
-      }
-
-      .search-within {
-        font-size: 16px;
-        color: #666;
-        margin-bottom: 15px;
-      }
-
-      @media (max-width: 768px) {
-        .two-column {
-          flex-direction: column;
-        }
-
-        .movie-result {
-          flex-direction: column;
-        }
-
-        .movie-poster {
-          width: 100%;
-          height: auto;
-          max-height: 200px;
-          margin-bottom: 15px;
-          margin-right: 0;
-        }
-
-        .add-watchlist {
-          position: static;
-          margin-top: 10px;
-          width: 100%;
-          justify-content: center;
-        }
-      }
-    </style>
+    <link rel="stylesheet" href="/src/style/search.css" />
+    <link rel="stylesheet" href="/src/style/shared.css" />
   </head>
   <body>
+    <header class="header">
+      <div class="container">
+        <nav class="nav">
+          <div class="nav-left">
+            <a href="/">
+              <img
+                src="https://sigmawire.net/i/03/8PFyjd.png"
+                alt="logo"
+                class="logo"
+              />
+            </a>
+            <div class="menu-container">
+              <button class="button button--ghost button--icon" id="menu-btn">
+                <svg
+                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M18 6H6m12 4H6m12 4H6m12 4H6"
+                  />
+                </svg>
+                Menu
+              </button>
+              <div class="nav-menu" id="menu">
+                <a href="#" class="nav-link">Home</a>
+                <a href="#" class="nav-link">Movies</a>
+                <a href="#" class="nav-link">TV Shows</a>
+                <a href="#" class="nav-link">New & Popular</a>
+                <a href="#" class="nav-link">My List</a>
+              </div>
+            </div>
+
+            <div class="search-bar">
+              <button class="search-filter">
+                All<svg
+                  class="w-6 h-6 text-gray-800 dark:text-white"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="12"
+                  height="12"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="m19 9-7 7-7-7"
+                  />
+                </svg>
+              </button>
+              <input
+                class="search-input"
+                type="text"
+                placeholder="Search"
+                id="search-input"
+                onkeydown="if(event.key === 'Enter') handleSearch()"
+              />
+              <button class="search-icon" onclick="handleSearch()">
+                <svg
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="gray"
+                    stroke-linecap="round"
+                    stroke-width="2"
+                    d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
+                  />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="auth-actions">
+            <a href="/login.html" class="auth-link">Sign In</a>
+            <a href="/register.html" class="auth-link">Sign Up</a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
     <div class="container">
       <div class="search-page">
         <div
@@ -445,7 +140,7 @@
               <div class="results-box">
                 <div class="movie-result">
                   <img
-                    src="/api/placeholder/80/120"
+                    src="/src/assets/images/dilan.jpg"
                     alt="Dilan 1983"
                     class="movie-poster"
                   />
@@ -463,7 +158,7 @@
 
                 <div class="movie-result">
                   <img
-                    src="/api/placeholder/80/120"
+                    src="/src/assets/images/dilan.jpg"
                     alt="Dilan 1990"
                     class="movie-poster"
                   />
@@ -481,7 +176,7 @@
 
                 <div class="movie-result">
                   <img
-                    src="/api/placeholder/80/120"
+                    src="/src/assets/images/dilan.jpg"
                     alt="Dilan 1991"
                     class="movie-poster"
                   />
@@ -500,7 +195,7 @@
                 <div id="more-movies" style="display: none">
                   <div class="movie-result">
                     <img
-                      src="/api/placeholder/80/120"
+                      src="/src/assets/images/dilan.jpg"
                       alt="Milea: Suara dari Dilan"
                       class="movie-poster"
                     />
@@ -545,7 +240,7 @@
                 <div class="result-item">
                   <div class="result-avatar">
                     <img
-                      src="/api/placeholder/50/50"
+                      src="/src//assets/images/iqbal.jpg"
                       alt="Iqbaal Dhiafakhri Ramadhan"
                     />
                   </div>
@@ -557,7 +252,10 @@
 
                 <div class="result-item">
                   <div class="result-avatar">
-                    <img src="/api/placeholder/50/50" alt="Vanesha Prescilla" />
+                    <img
+                      src="/src//assets/images/iqbal.jpg"
+                      alt="Vanesha Prescilla"
+                    />
                   </div>
                   <div class="result-info">
                     <div class="result-name">Vanesha Prescilla</div>
@@ -567,7 +265,7 @@
 
                 <div class="result-item">
                   <div class="result-avatar">
-                    <img src="/api/placeholder/50/50" alt="Ira Wibowo" />
+                    <img src="/src//assets/images/iqbal.jpg" alt="Ira Wibowo" />
                   </div>
                   <div class="result-info">
                     <div class="result-name">Ira Wibowo</div>
@@ -579,7 +277,10 @@
                 <div id="more-people" style="display: none">
                   <div class="result-item">
                     <div class="result-avatar">
-                      <img src="/api/placeholder/50/50" alt="Happy Salma" />
+                      <img
+                        src="/src//assets/images/iqbal.jpg"
+                        alt="Happy Salma"
+                      />
                     </div>
                     <div class="result-info">
                       <div class="result-name">Happy Salma</div>
@@ -685,53 +386,99 @@
       </div>
     </div>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        // Show more movies
-        const moreMatchesButton = document.getElementById(
-          "more-matches-button"
-        );
-        const moreMovies = document.getElementById("more-movies");
-        let isMoreMoviesVisible = false;
+    <footer class="footer">
+      <div class="container">
+        <!-- Footer Links -->
+        <div class="footer-container">
+          <div class="footer-brand">
+            <a href="#">
+              <img
+                src="https://sigmawire.net/i/03/8PFyjd.png"
+                alt="logo"
+                class="logo"
+            /></a>
+            <p>The best place to watch movies and TV shows online.</p>
+          </div>
+          <div class="footer-links">
+            <div class="footer-column">
+              <h4 class="footer-column-title">About Us</h4>
+              <a href="#" class="footer-link">Our Story</a>
+              <a href="#" class="footer-link">Careers</a>
+              <a href="#" class="footer-link">Contact</a>
+            </div>
+            <div class="footer-column">
+              <h4 class="footer-column-title">Support</h4>
+              <a href="#" class="footer-link">Help Center</a>
+              <a href="#" class="footer-link">FAQs</a>
+              <a href="#" class="footer-link">Privacy Policy</a>
+            </div>
+            <div class="footer-column">
+              <h4 class="footer-column-title">Follow Us</h4>
+              <div class="social-links">
+                <a href="#" class="social-link"
+                  ><svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link"
+                  ><svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M22 5.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.343 8.343 0 0 1-2.605.981A4.13 4.13 0 0 0 15.85 4a4.068 4.068 0 0 0-4.1 4.038c0 .31.035.618.105.919A11.705 11.705 0 0 1 3.4 4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 6.1 13.635a4.192 4.192 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 2 18.184 11.732 11.732 0 0 0 8.291 20 11.502 11.502 0 0 0 19.964 8.5c0-.177 0-.349-.012-.523A8.143 8.143 0 0 0 22 5.892Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+                <a href="#" class="social-link"
+                  ><svg
+                    class="w-6 h-6 text-gray-800 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      fill="currentColor"
+                      fill-rule="evenodd"
+                      d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z"
+                      clip-rule="evenodd"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-        moreMatchesButton.addEventListener("click", function (e) {
-          e.preventDefault();
-          isMoreMoviesVisible = !isMoreMoviesVisible;
-          if (isMoreMoviesVisible) {
-            moreMovies.style.display = "block";
-            this.textContent = "Tampilkan lebih sedikit ";
-          } else {
-            moreMovies.style.display = "none";
-            this.textContent = "Tampilkan lebih banyak ";
-          }
-        });
+        <!-- Legal Information -->
+        <div class="footer-legal">
+          <span>© 2021 Filo. All rights reserved.</span>
+        </div>
+      </div>
+    </footer>
 
-        // Show more people
-        const morePeopleButton = document.getElementById("more-people-button");
-        const morePeople = document.getElementById("more-people");
-        let isMorePeopleVisible = false;
-
-        morePeopleButton.addEventListener("click", function (e) {
-          e.preventDefault();
-          isMorePeopleVisible = !isMorePeopleVisible;
-          if (isMorePeopleVisible) {
-            morePeople.style.display = "block";
-            this.textContent = "Tampilkan lebih sedikit ";
-          } else {
-            morePeople.style.display = "none";
-            this.textContent = "Tampilkan lebih banyak";
-          }
-        });
-
-        // Filter tags
-        const filterTags = document.querySelectorAll(".filter-tag");
-        filterTags.forEach((tag) => {
-          tag.addEventListener("click", function () {
-            // In a real application, this would filter results
-            console.log("Filter by:", this.textContent);
-          });
-        });
-      });
-    </script>
+    <script src="/src/js/search.js"></script>
   </body>
 </html>

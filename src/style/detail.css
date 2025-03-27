@@ -1,894 +1,896 @@
 /* ===============================================
    BASE STYLES
    =============================================== */
-   * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: #1a1a1a;
-    color: #ffffff;
-    font-family: Roboto, Arial, sans-serif;
-    line-height: 1.5;
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: Roboto, Arial, sans-serif;
+  line-height: 1.5;
 }
 
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1260px;
+  margin: 0 auto;
 }
 
 /* ===============================================
    HEADER & NAVIGATION
    =============================================== */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background-color: #121212;
-    border-bottom: 1px solid #2a2a2a;
+.header-detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #121212;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .header-left,
 .header-right {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .header-right {
-    gap: 15px;
+  gap: 15px;
 }
 
 .header-right nav {
-    display: flex;
+  display: flex;
 }
 
 .header-link {
-    color: #ffffff;
-    text-decoration: none;
-    margin-right: 15px;
-    font-size: 14px;
+  color: #ffffff;
+  text-decoration: none;
+  margin-right: 15px;
+  font-size: 14px;
 }
 
 .header-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .episode-guide {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .episode-number {
-    background-color: #333;
-    padding: 2px 5px;
-    border-radius: 4px;
-    margin-left: 5px;
+  background-color: #333;
+  padding: 2px 5px;
+  border-radius: 4px;
+  margin-left: 5px;
 }
 
 .nav-arrow {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .share-button {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
 }
 
 .all-topics-button {
-    display: flex;
-    align-items: center;
-    background-color: #252525;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    border-radius: 4px;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  background-color: #252525;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .menu-icon {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 /* ===============================================
    TITLE SECTION
    =============================================== */
 .title-section {
-    padding: 20px 0;
+  padding: 20px 0;
 }
 
 .title {
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .subtitle {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-    color: #aaaaaa;
-    font-size: 14px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  color: #aaaaaa;
+  font-size: 14px;
+  margin-bottom: 20px;
 }
 
 .dot-separator {
-    font-size: 8px;
-    vertical-align: middle;
+  font-size: 8px;
+  vertical-align: middle;
 }
 
 /* ===============================================
    RATING SECTION
    =============================================== */
 .rating-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .rating-column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .rating-header {
-    font-size: 12px;
-    color: #aaaaaa;
-    margin-bottom: 5px;
+  font-size: 12px;
+  color: #aaaaaa;
+  margin-bottom: 5px;
 }
 
 /* IMDb Rating */
 .imdb-rating {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .star-icon {
-    font-size: 24px;
-    margin-right: 5px;
+  font-size: 24px;
+  margin-right: 5px;
 }
 
 .star-icon.gold {
-    color: #f5c518;
+  color: #f5c518;
 }
 
 .star-icon.blue {
-    color: #5799ef;
+  color: #5799ef;
 }
 
 .rating-value {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .rating-max {
-    font-size: 14px;
-    color: #aaaaaa;
+  font-size: 14px;
+  color: #aaaaaa;
 }
 
 .rating-count {
-    font-size: 12px;
-    color: #aaaaaa;
+  font-size: 12px;
+  color: #aaaaaa;
 }
 
 /* Your Rating */
 .your-rating {
-    display: flex;
-    align-items: center;
-    color: #5799ef;
+  display: flex;
+  align-items: center;
+  color: #5799ef;
 }
 
 .rate-button {
-    color: #5799ef;
-    font-size: 18px;
-    font-weight: bold;
-    background: none;
-    border: none;
-    cursor: pointer;
+  color: #5799ef;
+  font-size: 18px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 /* Popularity */
 .popularity {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .popularity-icon {
-    color: #46d369;
-    font-size: 24px;
-    margin-right: 5px;
+  color: #46d369;
+  font-size: 24px;
+  margin-right: 5px;
 }
 
 .popularity-value {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .popularity-trend {
-    color: #46d369;
-    font-size: 14px;
-    margin-left: 5px;
+  color: #46d369;
+  font-size: 14px;
+  margin-left: 5px;
 }
 
 /* ===============================================
    MEDIA SECTION (REVISED LAYOUT)
    =============================================== */
 .media-gallery {
-    margin-bottom: 30px;
+  margin-bottom: 30px;
 }
 
 .media-grid {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
-    gap: 15px;
-    grid-template-areas:
-        "poster trailer"
-        "buttons buttons";
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto;
+  gap: 15px;
+  grid-template-areas:
+    "poster trailer"
+    "buttons buttons";
 }
 
 /* Poster styles */
 .poster-container {
-    grid-area: poster;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  grid-area: poster;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .poster-image {
-    width: 250px;
-    height: 370px;
-    object-fit: cover;
-    display: block;
+  width: 250px;
+  height: 370px;
+  object-fit: cover;
+  display: block;
 }
 
 /* Trailer styles */
 .trailer-container {
-    grid-area: trailer;
-    position: relative;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  grid-area: trailer;
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .trailer-image {
-    width: 100%;
-    height: 370px;
-    object-fit: cover;
-    display: block;
-    transition: transform 0.5s ease;
+  width: 100%;
+  height: 370px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
 }
 
 .trailer-container:hover .trailer-image {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .play-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 /* Repositioned play button (not in center) */
 .play-button {
-    position: absolute;
-    top: 50%;
-    left: 30%; /* Moved from center (50%) to left side (30%) */
-    transform: translate(-50%, -50%);
-    background-color: rgba(0, 0, 0, 0.7);
-    border: 2px solid white;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+  position: absolute;
+  top: 50%;
+  left: 30%; /* Moved from center (50%) to left side (30%) */
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .play-button:hover {
-    transform: translate(-50%, -50%) scale(1.1);
-    background-color: rgba(0, 0, 0, 0.9);
+  transform: translate(-50%, -50%) scale(1.1);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .play-icon {
-    color: white;
-    font-size: 24px;
+  color: white;
+  font-size: 24px;
 }
 
 .play-text {
-    position: absolute;
-    top: 50%;
-    left: calc(30% + 40px); /* Aligned with repositioned play button */
-    transform: translateY(-50%);
-    color: white;
-    font-size: 18px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  left: calc(30% + 40px); /* Aligned with repositioned play button */
+  transform: translateY(-50%);
+  color: white;
+  font-size: 18px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .trailer-duration {
-    position: absolute;
-    top: 50%;
-    left: calc(30% + 140px); /* Adjusted to be aligned with play text */
-    transform: translateY(-50%);
-    color: white;
-    font-size: 14px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 50%;
+  left: calc(30% + 140px); /* Adjusted to be aligned with play text */
+  transform: translateY(-50%);
+  color: white;
+  font-size: 14px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
 }
 
 .trailer-actions {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    display: flex;
-    gap: 10px;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
 }
 
-.trailer-like, 
+.trailer-like,
 .trailer-dislike {
-    display: flex;
-    align-items: center;
-    color: white;
-    font-size: 14px;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 14px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
 
-.trailer-like:hover, 
+.trailer-like:hover,
 .trailer-dislike:hover {
-    background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 .like-icon,
 .heart-icon {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 /* Media Buttons (Videos/Photos) */
 .media-buttons {
-    grid-area: buttons;
-    display: flex;
-    gap: 15px;
-    margin-top: 10px;
+  grid-area: buttons;
+  display: flex;
+  gap: 15px;
+  margin-top: 10px;
 }
 
 .media-button {
-    flex: 1;
-    background-color: #1f1f1f;
-    border-radius: 8px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-decoration: none;
-    padding: 20px;
-    cursor: pointer;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  flex: 1;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .media-button:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
-    background-color: #2a2a2a;
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  background-color: #2a2a2a;
 }
 
 .media-icon {
-    font-size: 24px;
-    margin-bottom: 10px;
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
 /* ===============================================
    GENRE SECTION
    =============================================== */
 .genre-section {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 10px;
 }
 
 .genre-tag {
-    background-color: #252525;
-    padding: 5px 15px;
-    border-radius: 20px;
-    white-space: nowrap;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #252525;
+  padding: 5px 15px;
+  border-radius: 20px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .genre-tag:hover {
-    background-color: #333333;
+  background-color: #333333;
 }
 
 .genre-tag-hover {
-    transform: translateY(-3px);
-    background-color: #3a3a3a !important;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  transform: translateY(-3px);
+  background-color: #3a3a3a !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .nav-more {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 /* ===============================================
    SYNOPSIS SECTION
    =============================================== */
 .synopsis {
-    font-size: 16px;
-    line-height: 1.5;
-    margin-bottom: 20px;
-    max-width: 800px;
-    color: #dddddd;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  max-width: 800px;
+  color: #dddddd;
 }
 
 /* ===============================================
    REVISED WATCHLIST BUTTON
    =============================================== */
 .watchlist-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 20px;
-    max-width: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  max-width: 280px;
 }
 
 .watchlist-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #f5c518;
-    color: #000000;
-    padding: 12px 15px;
-    width: 100%;
-    border-radius: 6px;
-    border: none;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: transform 0.2s ease, background-color 0.3s ease;
-    margin-bottom: 10px; /* Add space between button and count */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f5c518;
+  color: #000000;
+  padding: 12px 15px;
+  width: 100%;
+  border-radius: 6px;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  margin-bottom: 10px; /* Add space between button and count */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .watchlist-button:hover {
-    background-color: #ffD700;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background-color: #ffd700;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 .watchlist-button-clicked {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 .watchlist-icon {
-    margin-right: 8px;
-    font-weight: bold;
-    font-size: 18px;
+  margin-right: 8px;
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .watchlist-count {
-    background-color: #2a2a2a;
-    color: #cccccc;
-    padding: 10px 15px;
-    font-size: 14px;
-    width: 100%;
-    border-radius: 6px;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-color: #2a2a2a;
+  color: #cccccc;
+  padding: 10px 15px;
+  font-size: 14px;
+  width: 100%;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* ===============================================
    STARS SECTION
    =============================================== */
 .stars-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .stars-header {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .stars-list {
-    display: flex;
-    gap: 10px;
-    align-items: center;
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }
 
 .star-name {
-    color: #5799ef;
-    cursor: pointer;
-    position: relative;
-    transition: color 0.3s ease;
+  color: #5799ef;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .star-name:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .star-name::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: #5799ef;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #5799ef;
+  transition: width 0.3s ease;
 }
 
 .star-name:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 /* ===============================================
    REVIEWS SECTION
    =============================================== */
 .reviews-section {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
-.user-reviews, 
+.user-reviews,
 .critic-reviews {
-    color: #5799ef;
-    cursor: pointer;
+  color: #5799ef;
+  cursor: pointer;
 }
 
-.user-reviews:hover, 
+.user-reviews:hover,
 .critic-reviews:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ===============================================
    IMDBPRO SECTION
    =============================================== */
 .imdbpro-section {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .imdbpro-logo {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .imdbpro-link {
-    color: #5799ef;
-    margin-left: 10px;
-    cursor: pointer;
+  color: #5799ef;
+  margin-left: 10px;
+  cursor: pointer;
 }
 
 .imdbpro-link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ===============================================
    COMMON SECTION STYLES
    =============================================== */
 .imdb-section {
-    border-top: 1px solid #2a2a2a;
-    padding: 20px 0;
-    margin-bottom: 20px;
+  border-top: 1px solid #2a2a2a;
+  padding: 20px 0;
+  margin-bottom: 20px;
 }
 
 .section-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .section-title {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .section-title h2 {
-    font-size: 24px;
-    font-weight: bold;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .yellow-bar {
-    width: 4px;
-    height: 24px;
-    background-color: #f5c518;
-    margin-right: 10px;
+  width: 4px;
+  height: 24px;
+  background-color: #f5c518;
+  margin-right: 10px;
 }
 
 .edit-button {
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-    color: #aaaaaa;
-    cursor: pointer;
-    transition: transform 0.2s ease, color 0.2s ease;
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #aaaaaa;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
 .edit-button:hover {
-    color: white;
-    transform: translateY(-2px);
+  color: white;
+  transform: translateY(-2px);
 }
 
 .edit-icon {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .link {
-    color: #5799ef;
-    text-decoration: none;
-    position: relative;
-    transition: color 0.3s ease;
+  color: #5799ef;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
 }
 
 .link:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .link::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 1px;
-    bottom: 0;
-    left: 0;
-    background-color: #5799ef;
-    transition: width 0.3s ease;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 0;
+  left: 0;
+  background-color: #5799ef;
+  transition: width 0.3s ease;
 }
 
 .link:hover::after {
-    width: 100%;
+  width: 100%;
 }
 
 .chevron {
-    color: #aaaaaa;
+  color: #aaaaaa;
 }
 
 /* ===============================================
    STORYLINE SECTION
    =============================================== */
 .storyline-text {
-    font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-    color: #dddddd;
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  color: #dddddd;
 }
 
 .storyline-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .tag {
-    background-color: #252525;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #252525;
+  padding: 5px 15px;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .tag:hover {
-    background-color: #333333;
-    transform: translateY(-3px);
+  background-color: #333333;
+  transform: translateY(-3px);
 }
 
 .storyline-links {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
 }
 
 .item-with-chevron {
-    display: flex;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .item-with-links {
-    display: flex;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .item-label {
-    width: 150px;
-    font-weight: bold;
+  width: 150px;
+  font-weight: bold;
 }
 
 .item-value {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 /* ===============================================
    USER REVIEWS SECTION
    =============================================== */
 .section-title .count {
-    color: #aaaaaa;
-    font-size: 16px;
-    margin-left: 5px;
+  color: #aaaaaa;
+  font-size: 16px;
+  margin-left: 5px;
 }
 
 .review-button {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #5799ef;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    transition: transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #5799ef;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  transition: transform 0.2s ease;
 }
 
 .review-button:hover {
-    transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .plus-icon {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .review-card {
-    background-color: #1f1f1f;
-    border-radius: 8px;
-    padding: 20px;
-    margin-bottom: 20px;
-    position: relative;
+  background-color: #1f1f1f;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 20px;
+  position: relative;
 }
 
 .review-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .featured-badge {
-    background-color: #f5c518;
-    color: black;
-    padding: 3px 8px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: bold;
+  background-color: #f5c518;
+  color: black;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 .review-rating {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .review-rating .star-icon {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .review-rating .rating {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 .review-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
 }
 
 .review-title h3 {
-    font-size: 18px;
-    font-weight: bold;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .review-text {
-    font-size: 14px;
-    line-height: 1.6;
-    margin-bottom: 15px;
-    color: #dddddd;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  color: #dddddd;
 }
 
 .review-options {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    color: #aaaaaa;
-    cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #aaaaaa;
+  cursor: pointer;
 }
 
 .review-actions {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
 }
 
-.helpful, .not-helpful {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    color: #aaaaaa;
-    cursor: pointer;
-    transition: color 0.3s ease;
+.helpful,
+.not-helpful {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #aaaaaa;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.helpful-active, .not-helpful-active {
-    color: #f5c518 !important;
-    font-weight: bold;
+.helpful-active,
+.not-helpful-active {
+  color: #f5c518 !important;
+  font-weight: bold;
 }
 
 .more-actions {
-    margin-left: auto;
-    color: #aaaaaa;
-    cursor: pointer;
+  margin-left: auto;
+  color: #aaaaaa;
+  cursor: pointer;
 }
 
 .review-footer {
-    font-size: 14px;
-    color: #aaaaaa;
+  font-size: 14px;
+  color: #aaaaaa;
 }
 
 .user {
-    color: #5799ef;
-    text-decoration: none;
+  color: #5799ef;
+  text-decoration: none;
 }
 
 .user:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .permalink {
-    color: #5799ef;
-    text-decoration: none;
+  color: #5799ef;
+  text-decoration: none;
 }
 
 .permalink:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* ===============================================
    DETAILS SECTION
    =============================================== */
 .details-item {
-    display: flex;
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #2a2a2a;
+  display: flex;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #2a2a2a;
 }
 
 .details-item:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .external-link-icon {
-    font-size: 12px;
-    margin-left: 5px;
-    color: #aaaaaa;
+  font-size: 12px;
+  margin-left: 5px;
+  color: #aaaaaa;
 }
 
 /* ===============================================
@@ -897,88 +899,96 @@ header {
 
 /* Pulse animation for play button */
 @keyframes pulse {
-    0% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
-    }
-    
-    70% {
-        transform: scale(1.05);
-        box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
-    }
-    
-    100% {
-        transform: scale(1);
-        box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
 }
 
 .pulse-animation {
-    animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
 }
 
 /* Play button expanded state */
 .play-button-expanded {
-    transform: translate(-50%, -50%) scale(1.1) !important;
-    transition: transform 0.3s ease !important;
+  transform: translate(-50%, -50%) scale(1.1) !important;
+  transition: transform 0.3s ease !important;
 }
 
 /* Play button click animation */
 .play-button-clicked {
-    transform: translate(-50%, -50%) scale(0.9) !important;
-    transition: transform 0.1s ease !important;
+  transform: translate(-50%, -50%) scale(0.9) !important;
+  transition: transform 0.1s ease !important;
 }
 
 /* Section reveal animation */
 .section-hidden {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
 }
 
 .section-revealed {
-    opacity: 1;
-    transform: translateY(0);
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Read more button styles */
-.read-more-btn, .toggle-review-btn {
-    background: none;
-    border: none;
-    color: #5f6267;
-    cursor: pointer;
-    margin: 10px 0;
-    padding: 0;
-    font-size: 14px;
+.read-more-btn,
+.toggle-review-btn {
+  background: none;
+  border: none;
+  color: #5f6267;
+  cursor: pointer;
+  margin: 10px 0;
+  padding: 0;
+  font-size: 14px;
 }
 
-.read-more-btn:hover, .toggle-review-btn:hover {
-    text-decoration: underline;
+.read-more-btn:hover,
+.toggle-review-btn:hover {
+  text-decoration: underline;
 }
 
 /* Watchlist success message */
 .watchlist-message {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%) translateY(-20px);
-    background-color: #46d369;
-    color: white;
-    padding: 10px 20px;
-    border-radius: 4px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    z-index: 1000;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  background-color: #46d369;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 1000;
 }
 
 /* Rating stars animation */
 @keyframes starPulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 .star-icon.gold {
-    animation: starPulse 2s ease-in-out 1;
+  animation: starPulse 2s ease-in-out 1;
 }
